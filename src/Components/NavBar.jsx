@@ -1,45 +1,25 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+    const linkClass = ({ isActive }) => 
+        `text-white font-semibold `;
+
     return (
-        <nav className="bg-gray-900 fixed top-0 w-full z-50 shadow-md">
-            <div className="container mx-auto flex justify-center p-4">
-                <NavLink 
-                    to="/" 
-                    className={({ isActive }) => 
-                        `text-white px-4 py-2 rounded-md ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} transition-colors duration-300`
-                    }
-                >
-                    Home
-                </NavLink>
-                <NavLink 
-                    to="/users" 
-                    className={({ isActive }) => 
-                        `text-white px-4 py-2 rounded-md ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} transition-colors duration-300`
-                    }
-                >
-                    Users
-                </NavLink>
-                <NavLink 
-                    to="/comments" 
-                    className={({ isActive }) => 
-                        `text-white px-4 py-2 rounded-md ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} transition-colors duration-300`
-                    }
-                >
-                    Comments
-                </NavLink>
-                <NavLink 
-                    to="/photos" 
-                    className={({ isActive }) => 
-                        `text-white px-4 py-2 rounded-md ${isActive ? 'bg-gray-700' : 'hover:bg-gray-700'} transition-colors duration-300`
-                    }
-                >
-                    Photos
-                </NavLink>
+        <nav className="bg-indigo-700">
+        <div>
+            <div>
+            <div className="flex-1 flex items-center justify-center ">
+                <div className="md:ml-auto flex space-x-4">
+                <NavLink to="/" className={linkClass}>Home</NavLink>
+                <NavLink to="/users" className={linkClass}>Users</NavLink>
+                <NavLink to="/comments" className={linkClass}>Comments</NavLink>
+                <NavLink to="/photos" className={linkClass}>Photos</NavLink>
+                </div>
             </div>
+            </div>
+        </div>
         </nav>
     );
-}
+};
 
 export default Navbar;

@@ -22,12 +22,12 @@ const ViewUsersPage = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
-            <div>
+        <div className="flex flex-col items-center justify-center min-h-screen text-center">
+            <div className="flex flex-col items-center justify-center min-h-screen text-center">
             <h1 className="text-3xl font-semibold text-gray-800 mb-6 text-center">Users Page</h1>
             <ul className="space-y-6">
                 {users.map(user => (
-                <li key={user.id} className="border border-gray-300 p-6 mb-4 rounded-lg shadow-md">
+                <li key={user.id} className="text-center border border-gray-300 p-6 mb-4 rounded-lg shadow-md">
                     <h2 className="text-2xl font-bold text-gray-800 mb-2">{user.name}</h2>
                     <p ><strong>Username:</strong> {user.username}</p>
                     <p className="text-gray-700 mb-1"><strong>Email:</strong> {user.email}</p>
